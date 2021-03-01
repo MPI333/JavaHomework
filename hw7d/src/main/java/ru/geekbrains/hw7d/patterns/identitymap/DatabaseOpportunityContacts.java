@@ -1,25 +1,16 @@
 package ru.geekbrains.hw7d.patterns.identitymap;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.geekbrains.hw7d.models.OpportunityContacts;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class DatabaseOpportunityContacts {
 
     private IdentityMapOpportunityContacts identityMapOpportunityContacts;
-
-    public DatabaseOpportunityContacts() {
-    }
-
-    public DatabaseOpportunityContacts(IdentityMapOpportunityContacts identityMapOpportunityContacts) {
-        this.identityMapOpportunityContacts = identityMapOpportunityContacts;
-    }
-
-    public IdentityMapOpportunityContacts getIdentityMapOpportunityContacts() {
-        return identityMapOpportunityContacts;
-    }
-
-    public void setIdentityMapOpportunityContacts(IdentityMapOpportunityContacts identityMapOpportunityContacts) {
-        this.identityMapOpportunityContacts = identityMapOpportunityContacts;
-    }
 
     public OpportunityContacts finder(Long key) {
         OpportunityContacts opportunityContact = identityMapOpportunityContacts.getOpportunityContact(key);

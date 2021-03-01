@@ -1,6 +1,6 @@
 package ru.geekbrains.hw7d.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,14 +10,10 @@ import ru.geekbrains.hw7d.controllers.reprs.AccountRepr;
 import ru.geekbrains.hw7d.services.AccountService;
 
 @Controller
+@AllArgsConstructor
 public class AccountController {
 
     private final AccountService accountService;
-
-    @Autowired
-    public AccountController(AccountService accountService) {
-        this.accountService = accountService;
-    }
 
     @GetMapping("/login")
     public String loginPage() {

@@ -1,11 +1,18 @@
 package ru.geekbrains.hw7d.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Table(name = "accounts")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Account {
 
     @Id
@@ -42,111 +49,5 @@ public class Account {
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
     private List<Activities> activitiesList;
-
-    public Account() {
-    }
-
-    public Account(String name, String password, BigDecimal balance,
-                   String phone, String email, String website, String address,
-                   String description, List<Contacts> contactsList, List<Activities> activitiesList) {
-        this.name = name;
-        this.password = password;
-        this.balance = balance;
-        this.phone = phone;
-        this.email = email;
-        this.website = website;
-        this.address = address;
-        this.description = description;
-        this.contactsList = contactsList;
-        this.activitiesList = activitiesList;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Contacts> getContactsList() {
-        return contactsList;
-    }
-
-    public void setContactsList(List<Contacts> contactsList) {
-        this.contactsList = contactsList;
-    }
-
-    public List<Activities> getActivitiesList() {
-        return activitiesList;
-    }
-
-    public void setActivitiesList(List<Activities> activitiesList) {
-        this.activitiesList = activitiesList;
-    }
 
 }

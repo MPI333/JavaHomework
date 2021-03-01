@@ -1,6 +1,6 @@
 package ru.geekbrains.hw7d.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,14 +10,10 @@ import ru.geekbrains.hw7d.models.Contacts;
 import ru.geekbrains.hw7d.services.ContactsService;
 
 @Controller
+@AllArgsConstructor
 public class ContactsController {
 
     private final ContactsService contactsService;
-
-    @Autowired
-    public ContactsController(ContactsService contactsService) {
-        this.contactsService = contactsService;
-    }
 
     @GetMapping("/contact/create")
     public String createContact(Model model) {

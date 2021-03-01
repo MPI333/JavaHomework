@@ -1,9 +1,16 @@
 package ru.geekbrains.hw7d.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 
     @Id
@@ -16,37 +23,5 @@ public class Product {
 
     @OneToOne(mappedBy = "product")
     private OpportunityProduct opportunityProduct;
-
-    public Product() {
-    }
-
-    public Product(String productName, OpportunityProduct opportunityProduct) {
-        this.productName = productName;
-        this.opportunityProduct = opportunityProduct;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public OpportunityProduct getOpportunityProduct() {
-        return opportunityProduct;
-    }
-
-    public void setOpportunityProduct(OpportunityProduct opportunityProduct) {
-        this.opportunityProduct = opportunityProduct;
-    }
 
 }

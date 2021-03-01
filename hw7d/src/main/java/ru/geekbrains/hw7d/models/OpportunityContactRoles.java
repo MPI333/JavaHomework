@@ -1,9 +1,16 @@
 package ru.geekbrains.hw7d.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "opportunitycontactroles")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OpportunityContactRoles {
 
     @Id
@@ -16,37 +23,5 @@ public class OpportunityContactRoles {
 
     @OneToOne(mappedBy = "opportunitycontactrole")
     private OpportunityContacts opportunityContact;
-
-    public OpportunityContactRoles() {
-    }
-
-    public OpportunityContactRoles(String roleName, OpportunityContacts opportunityContact) {
-        this.roleName = roleName;
-        this.opportunityContact = opportunityContact;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public OpportunityContacts getOpportunityContact() {
-        return opportunityContact;
-    }
-
-    public void setOpportunityContact(OpportunityContacts opportunityContact) {
-        this.opportunityContact = opportunityContact;
-    }
 
 }

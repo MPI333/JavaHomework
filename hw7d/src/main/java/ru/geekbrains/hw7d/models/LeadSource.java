@@ -1,9 +1,16 @@
 package ru.geekbrains.hw7d.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "leadsources")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class LeadSource {
 
     @Id
@@ -16,37 +23,5 @@ public class LeadSource {
 
     @OneToOne(mappedBy = "leadsource")
     private Leads lead;
-
-    public LeadSource() {
-    }
-
-    public LeadSource(String sourceName, Leads lead) {
-        this.sourceName = sourceName;
-        this.lead = lead;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSourceName() {
-        return sourceName;
-    }
-
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
-    }
-
-    public Leads getLead() {
-        return lead;
-    }
-
-    public void setLead(Leads lead) {
-        this.lead = lead;
-    }
 
 }

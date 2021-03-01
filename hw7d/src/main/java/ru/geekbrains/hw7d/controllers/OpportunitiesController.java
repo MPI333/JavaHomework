@@ -1,6 +1,6 @@
 package ru.geekbrains.hw7d.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,14 +10,10 @@ import ru.geekbrains.hw7d.models.Opportunities;
 import ru.geekbrains.hw7d.services.OpportunitiesService;
 
 @Controller
+@AllArgsConstructor
 public class OpportunitiesController {
 
     private final OpportunitiesService opportunitiesService;
-
-    @Autowired
-    public OpportunitiesController(OpportunitiesService opportunitiesService) {
-        this.opportunitiesService = opportunitiesService;
-    }
 
     @GetMapping("/opportunity/create")
     public String createOpportunity(Model model) {

@@ -1,6 +1,6 @@
 package ru.geekbrains.hw7d.patterns.proxy;
 
-public class makePaymentFromAccount implements Payment {
+public class MakePaymentFromAccount implements Payment {
 
     private static Payment payment;
 

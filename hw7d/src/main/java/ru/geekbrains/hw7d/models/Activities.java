@@ -1,9 +1,16 @@
 package ru.geekbrains.hw7d.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "activities")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Activities {
 
     @Id
@@ -19,46 +26,5 @@ public class Activities {
 
     @ManyToOne(optional = false)
     private Account account;
-
-    public Activities() {
-    }
-
-    public Activities(String name, String type, Account account) {
-        this.name = name;
-        this.type = type;
-        this.account = account;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
 
 }
