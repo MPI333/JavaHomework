@@ -1,6 +1,5 @@
 package ru.geekbrains.hw7d.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "leadsources")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class LeadSource {
 

@@ -1,6 +1,5 @@
 package ru.geekbrains.hw7d.controllers.reprs;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.geekbrains.hw7d.models.Activities;
@@ -10,7 +9,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class AccountRepr {
 

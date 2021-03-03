@@ -1,6 +1,5 @@
 package ru.geekbrains.hw7d.controllers.reprs;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.geekbrains.hw7d.models.Account;
@@ -10,7 +9,6 @@ import ru.geekbrains.hw7d.models.Opportunities;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class ContactsRepr {
 
